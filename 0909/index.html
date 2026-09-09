@@ -3,40 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video 1</title>
+
+    <title>Kho Video</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             min-height: 100vh;
+            background: #111;
+            font-family: Arial, sans-serif;
+            color: white;
         }
 
-        .video-container {
-            width: 100%;
-            max-width: 900px;
-            aspect-ratio: 16 / 9;
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        iframe {
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .video-button {
+            display: block;
             width: 100%;
-            height: 100%;
-            border: 0;
+            margin: 15px 0;
+            padding: 18px 20px;
+
+            background: #ffffff;
+            color: #111;
+
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+
+            border-radius: 10px;
+
+            transition: 0.2s;
+        }
+
+        .video-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.85;
         }
     </style>
 </head>
 
 <body>
 
-<div class="video-container">
-    <iframe
-        src="https://video.twimg.com/amplify_video/2096576003342766080/pl/avc1/1280x720/HC1-iZ9JeR4OQ2R5.m3u8"
-        allow="autoplay"
-        allowfullscreen>
-    </iframe>
+<div class="container">
+
+    <h1>🎬 Kho Video</h1>
+
+    <a class="video-button" href="https://video.twimg.com/amplify_video/2096576070967525376/pl/avc1/1280x720/elEoOEmNcZlTzjip.m3u8/">
+        ▶ Xem Video 1
+    </a>
+
+    <a class="video-button" href="https://video.twimg.com/amplify_video/2096576003342766080/pl/avc1/1280x720/HC1-iZ9JeR4OQ2R5.m3u8">
+        ▶ Xem Video 2
+    </a>
+
+    <a class="video-button" href="https://video.twimg.com/amplify_video/2096576088663269376/pl/avc1/1280x720/_HOTH5FMzCC5zM47.m3u8">
+        ▶ Xem Video 3
+    </a>
+
 </div>
 
 </body>
