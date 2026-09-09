@@ -3,73 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xem Video</title>
+    <title>Video 1</title>
 
     <style>
         body {
             margin: 0;
-            background: #111;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 15px;
-            text-align: center;
-        }
-
-        video {
-            width: 100%;
-            max-height: 80vh;
             background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
 
 <body>
 
-<div class="container">
-
-   <a href="https://video.twimg.com/amplify_video/2096576070967525376/pl/avc1/1280x720/elEoOEmNcZlTzjip.m3u8">▶ Xem Video 1</a>
-    <a href="https://video.twimg.com/amplify_video/2096576003342766080/pl/avc1/1280x720/HC1-iZ9JeR4OQ2R5.m3u8">▶ Xem Video 2</a>
-    <a href="https://video.twimg.com/amplify_video/2096576088663269376/pl/avc1/1280x720/_HOTH5FMzCC5zM47.m3u8">▶ Xem Video 3</a>
+<div class="video-container">
+    <iframe
+        src="https://drive.google.com/file/d/1JI7NmWC-hNDrWufM8HIcaDR7Xyf4DR3F/preview"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
-<script>
-    const video = document.getElementById('video');
-
-    const videoUrl =
-        'https://video.twimg.com/amplify_video/2096576003342766080/pl/avc1/1280x720/HC1-iZ9JeR4OQ2R5.m3u8';
-
-    if (Hls.isSupported()) {
-
-        const hls = new Hls();
-
-        hls.loadSource(videoUrl);
-        hls.attachMedia(video);
-
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-            console.log('Video đã sẵn sàng');
-        });
-
-        hls.on(Hls.Events.ERROR, function (event, data) {
-            console.log('Lỗi HLS:', data);
-        });
-
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-
-        // Safari/iPhone/iPad có HLS tích hợp
-        video.src = videoUrl;
-
-    } else {
-
-        alert('Trình duyệt không hỗ trợ HLS');
-    }
-</script>
 
 </body>
 </html>
